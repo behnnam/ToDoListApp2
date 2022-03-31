@@ -16,7 +16,7 @@ function App() {
 
  <div className="flex flex-col h-screen justify-between">
   <div className="h-10 bg-red-500"> <Header /></div>
-  <div className="h-10 "> <Body /></div>
+  <div className="h-10 h-auto"> <Body /></div>
   <div className="h-10 bg-blue-500"><Footer /></div>
 </div>
     </div>
