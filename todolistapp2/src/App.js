@@ -10,9 +10,15 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Body />
-      <Footer />
+     
+     
+     
+
+ <div className="flex flex-col h-screen justify-between">
+  <div className="h-10 bg-red-500"> <Header /></div>
+  <div className="h-10 "> <Body /></div>
+  <div className="h-10 bg-blue-500"><Footer /></div>
+</div>
     </div>
   );
 }
