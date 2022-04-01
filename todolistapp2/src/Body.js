@@ -110,7 +110,7 @@ const Body = () => {
             <div className="grid grid-cols-2 gap-2">
 
 
-                <div className="border-2 h-full">{itemList != null ? itemList.map(res => (<div className={res.Status == true ? "flex place-content-end text-black space-x-4  border-2 border-indigo-700  m-2 p-1 rounded-md bg-green-200" : "flex place-content-end text-black space-x-4  border-2 border-indigo-700  m-2 p-1 rounded-md bg-red-200"}>
+                <div className="border-2 h-full">{itemList != null ? itemList.map(res => (<div key={res.id} className={res.Status == true ? "flex place-content-end text-black space-x-4  border-2 border-indigo-700  m-2 p-1 rounded-md bg-green-200" : "flex place-content-end text-black space-x-4  border-2 border-indigo-700  m-2 p-1 rounded-md bg-red-200"}>
                     <input type="text" id={res.id} className="w-full float-left text-left ml-2 font-medium  text-red-900 " defaultValue={res.Title} readOnly={!res.Edit} onBlur={() => Update(res.id, res.Edit)} ref={inputEdit} />
                     <ul className="flex flex-row  font-bold space-x-4 items-center">
                         <li> <i className='fa fa-times-rectangle-o hover:bg-red-500' onClick={() => removeItems(res.id)}></i></li>
@@ -122,7 +122,7 @@ const Body = () => {
                     <div className="md:flex md:items-center mb-6">
                         <div className="md:w-1/3">
                             <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
-                                Task Title
+                                Task Title :
                             </label>
                         </div>
                         <div className="md:w-1/3">
@@ -140,14 +140,14 @@ const Body = () => {
                     <div className="md:flex md:items-center mb-6">
                         <div className="md:w-1/3">
                             <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
-                                Task Title
+                                Filter :
                             </label>
                         </div>
                         <div className="md:w-1/3">
                             <select ref={inputSearch} className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-indigo-500" id="inline-full-name" type="text" placeholder="Taske" ref={inputSearch}>
-                                <option value="">همه</option>
-                                <option value={Svalue}>در حال انجام</option>
-                                <option value={!Svalue}>انجام شده</option>
+                                <option value="">All</option>
+                                <option value={Svalue}>Active</option>
+                                <option value={!Svalue}>Completed</option>
 
                             </select>
                         </div>
